@@ -1,0 +1,12 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+@import '~font-awesome';
+
+/* Layout */
+@import './layout/header';
+
+/* Helper */
+@import './helper/variables';
+
+/* Components */
