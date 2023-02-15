@@ -3,7 +3,43 @@
 {% block title %}Hello HomePageController!{% endblock %}
 
 {% block body %}
-<div class="text-3xl font-bold">
-    <h1>Hello world! ✅</h1>
-</div>
+    {% set me = 'Lutin Mickael' %}
+    {% set job = 'Web Developper' %}
+    <section class="p-7 rounded-[25px] bg-color-gray">
+        <div class="text-center py-2 mb-5 mx-auto bg-color-light-gray rounded-lg">{{ job }}</div>
+        <div class="grid grid-rows-1 grid-flow-col gap-4">
+            <div class="w-2/4 text-center">
+                <div class="xs:w-full lg:w-2/4 flex-shrink-0 m-auto">
+                    <img src="{{ asset('build/images/profile-picture.jpeg') }}"
+                         alt="{{ me }}"
+                         title="{{ me }}"
+                         class="rounded-full object-cover"
+                    >
+                </div>
+                <div class="p-3">
+                    <h3 class="mb-1 text-xl font-medium tracking-wider">{{ me }}</h3>
+                </div>
+                <div>
+                    <a href="https://github.com/dgmick" class="mx-2" target="_blank">
+                        G
+                    </a>
+                    <a href="https://www.instagram.com/dgwaner/" class="mx-2" target="_blank">
+                        I
+                    </a>
+                    <a href="https://www.linkedin.com/in/mickael-lutin-41357392/" class="mx-2" target="_blank">
+                        L
+                    </a>
+                </div>
+            </div>
+            <div>
+                <ul>
+                    {{ include('include/_info-user.html.twig', {title: 'email', value: 'lutmickael@gmail.com'}) }}
+                    {{ include('include/_info-user.html.twig', {title: 'phone', value: '0101202020'}) }}
+                    {{ include('include/_info-user.html.twig', {title: 'localisation', value: 'Paris, France'}) }}
+                </ul>
+            </div>
+        </div>
+        <hr class="border-color-yellow w-2/4 m-auto mt-5">
+
+    </section>
 {% endblock %}
