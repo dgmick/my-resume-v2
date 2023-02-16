@@ -1,6 +1,10 @@
 @import '../helper/variables';
 
-body {
-  background-color: $color-dark-gray;
-  color: $color-yellow;
+html {
+  scroll-behavior: smooth;
+
+  body {
+    background-color: $color-light-white;
+    color: $color-black-brown;
+  }
 }

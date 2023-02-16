@@ -60,10 +60,16 @@ Encore
     // enables Sass/SCSS support
     .enableSassLoader()
 
-    .copyFiles({
-        from: './assets/images',
-        to: 'images/[path][name].[hash:8].[ext]'
-    })
+    .copyFiles([
+        {
+            from: './assets/images',
+            to: 'images/[path][name].[hash:8].[ext]'
+        },
+        {
+            from: './assets/files',
+            to: 'files/[path][name].[hash:8].[ext]'
+        }]
+    )
 
     // uncomment if you use TypeScript
     .enableTypeScriptLoader()

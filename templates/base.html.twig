@@ -1,8 +1,8 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
     <head>
         <meta charset="UTF-8">
-        <title>{% block title %}Welcome!{% endblock %}</title>
+        <title>{% block title %}Lutin Mickael - Web developper{% endblock %}</title>
         <link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 128 128%22><text y=%221.2em%22 font-size=%2296%22>⚫️</text></svg>">
         {% block stylesheets %}
             {{ encore_entry_link_tags('style') }}
@@ -13,7 +13,7 @@
         {% endblock %}
     </head>
     <body>
-        <div class="container mx-auto py-14">
+        <div class="mx-auto py-14 px-4 sm:px-6 sm:max-w-3xl lg:px-8 lg:max-w-7xl">
             {% block body %}{% endblock %}
         </div>
     </body>
