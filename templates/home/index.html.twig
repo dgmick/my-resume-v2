@@ -5,8 +5,8 @@
     {% set job = 'Web Developper' %}
     <h1 class="text-center pb-5 text-4xl">{{ job }}</h1>
     <section class="p-7 rounded-[25px] border border-color-light-brown shadow-lg">
-        <div class="grid grid-rows-1 grid-flow-col gap-4">
-            <div class="w-2/4 text-center">
+        <div class="grid grid-cols-3 gap-4">
+            <div class="text-center">
                 <div class="xs:w-full lg:w-2/4 flex-shrink-0 m-auto">
                     <img src="{{ asset('build/images/profile-picture.jpeg') }}"
                          alt="{{ me }}"
@@ -16,6 +16,7 @@
                 </div>
                 <div class="p-2">
                     <h3 class="mb-1 text-xl font-medium tracking-wider">{{ me }}</h3>
+                    <p>🇫🇷 French - 🇺🇸 English (Basic)</p>
                 </div>
                 <div>
                     <a href="https://github.com/dgmick" class="mx-2" target="_blank">
@@ -36,18 +37,18 @@
                     {{ include('include/_info-user.html.twig', {title: 'localisation', value: 'Paris, France'}) }}
                 </ul>
             </div>
-            <div class="m-auto">
-                <div>
-                    <select id="file-fr" class="p-2 bg-color-light-brown rounded-lg mr-5">
-                        <option value="">Telecharger cv</option>
-                        <option value="{{ asset('build/files/cv_francais_fr.pdf') }}">Version 🇫🇷</option>
-                        <option value="{{ asset('build/files/cv_canadien_fr.pdf') }}">Version 🇨🇦</option>
-                    </select>
-                    <select id="file-en" class="p-2 bg-color-light-brown rounded-lg mr-5">
-                        <option value="">Download Resume</option>
-                        <option value="{{ asset('build/files/cv_canadien_fr.pdf') }}">Resume</option>
-                    </select>
-                </div>
+            <div class="flex flex-wrap justify-between content-center">
+                <label for="file-fr"></label>
+                <select id="file-fr" class="p-2 bg-color-light-brown rounded-lg">
+                    <option value="">Telecharger cv</option>
+                    <option value="{{ asset('build/files/cv_francais_fr.pdf') }}">Version 🇫🇷</option>
+                    <option value="{{ asset('build/files/cv_canadien_fr.pdf') }}">Version 🇨🇦</option>
+                </select>
+                <label for="file-en"></label>
+                <select id="file-en" class="p-2 bg-color-light-brown rounded-lg">
+                    <option value="">Download Resume</option>
+                    <option value="{{ asset('build/files/cv_canadien_fr.pdf') }}">Resume</option>
+                </select>
             </div>
         </div>
         <hr class="border-color-brown w-2/4 m-auto my-5">
@@ -64,15 +65,115 @@
             <h2 class="leading-10 text-4xl">ABOUT</h2>
             <div class="w-20 h-1 bg-color-brown mt-8 mb-10"></div>
         </div>
-        <div id="skill-element">
-            <h2 class="leading-10 text-4xl">SKILLS</h2>
+        <div id="skill-element" class="hidden">
+            <h2 class="leading-10 text-4xl">ABOUT</h2>
             <div class="w-20 h-1 bg-color-brown mt-8 mb-10"></div>
+            <h2 class="leading-10 text-4xl">Professional Skills</h2>
+            <div class="w-20 h-1 bg-color-brown mt-3"></div>
+            <br>
+            <div class="grid grid-cols-3 gap-4">
+                <div class="py-2">
+                    <h3>BackEnd</h3>
+                    <div class="w-20 h-1 bg-color-brown mt-3"></div>
+                    <ul class="flex flex-wrap items-center my-3">
+                        {{ include('include/_skill.html.twig', {
+                            title: 'php',
+                            framework: 'Symfony'
+                        }) }}
+                        {{ include('include/_skill.html.twig', {
+                            title: 'mysql',
+                            framework: ''
+                        }) }}
+                        {{ include('include/_skill.html.twig', {
+                            title: 'elasticsearch',
+                            framework: ''
+                        }) }}
+                    </ul>
+                </div>
+                <div class="py-2">
+                    <h3>FrontEnd</h3>
+                    <div class="w-20 h-1 bg-color-brown mt-3"></div>
+                    <ul class="flex flex-wrap items-center my-3">
+                        {{ include('include/_skill.html.twig', {
+                            title: 'Html',
+                            framework: ''
+                        }) }}
+                        {{ include('include/_skill.html.twig', {
+                            title: 'css',
+                            framework: 'sass, tailwindcss'
+                        }) }}
+                        {{ include('include/_skill.html.twig', {
+                            title: 'Javascript',
+                            framework: 'jquery'
+                        }) }}
+                    </ul>
+                </div>
+                <div class="py-2">
+                    <h3>OTHER SKILLS</h3>
+                    <div class="w-20 h-1 bg-color-brown mt-3"></div>
+                    <ul class="flex flex-wrap items-center my-3">
+                        {{ include('include/_skill.html.twig', {
+                            title: 'github',
+                            framework: ''
+                        }) }}
+                        {{ include('include/_skill.html.twig', {
+                            title: 'linux',
+                            framework: ''
+                        }) }}
+                        {{ include('include/_skill.html.twig', {
+                            title: 'macos',
+                            framework: ''
+                        }) }}
+                    </ul>
+                </div>
+                <div class="py-2">
+                    <h3>RECENTLY LEARNING</h3>
+                    <div class="w-20 h-1 bg-color-brown mt-3"></div>
+                    <ul class="flex flex-wrap items-center my-3">
+                        {{ include('include/_skill.html.twig', {
+                            title: 'python',
+                            framework: ''
+                        }) }}
+                        {{ include('include/_skill.html.twig', {
+                            title: 'swift',
+                            framework: 'swiftUi'
+                        }) }}
+                    </ul>
+                </div>
+            </div>
+            <h3 class="leading-10 text-4xl">Chart</h3>
+            <div class="w-20 h-1 bg-color-brown mt-3"></div>
+            {% set array = {
+                'Php': 70,
+                'Javascript': 50,
+                'HTML': 80,
+                'Css/Sass': 60,
+                'Tailwindcss': 30,
+                'Python': 30,
+                'Swift': 30,
+            } %}
+            <div class="grid grid-cols-4 gap-4 py-2">
+                {% for key, item in array %}
+                    <div class="pb-2">
+                        <div class="flex justify-between">
+                            <p>{{ key }}</p>
+                            <p>{{ item }}%</p>
+                        </div>
+                        <div class="w-full bg-color-light-brown rounded-full h-2.5">
+                            <div class="bg-color-brown h-2.5 rounded-full" style="width: {{ item }}%"></div>
+                        </div>
+                    </div>
+                {% endfor %}
+            </div>
         </div>
         <div id="resume-element" class="hidden">
-            <h2 class="leading-10 text-4xl">RESUME</h2>
+            <h2 class="leading-10 text-4xl">Work Experience</h2>
+            <div class="w-20 h-1 bg-color-brown mt-8 mb-10"></div>
+            <br>
+            <h2 class="leading-10 text-4xl">Education</h2>
             <div class="w-20 h-1 bg-color-brown mt-8 mb-10"></div>
         </div>
-        <div id="contact-element" class="hidden">
+        <div id="contact-element">
             <h2 class="leading-10 text-4xl">CONTACT</h2>
             <div class="w-20 h-1 bg-color-brown mt-8 mb-10"></div>
         </div>
