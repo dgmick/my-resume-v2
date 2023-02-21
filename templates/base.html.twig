@@ -15,6 +15,11 @@
     <body>
         <div class="mx-auto py-14 px-4 sm:px-6 sm:max-w-3xl lg:px-8 lg:max-w-7xl">
             {% block body %}{% endblock %}
+            <footer>
+                {% block footer %}
+                    {{ include('footer.html.twig') }}
+                {% endblock %}
+            </footer>
         </div>
     </body>
 </html>

@@ -18,17 +18,6 @@
                     <h3 class="mb-1 text-xl font-medium tracking-wider">{{ me }}</h3>
                     <p>🇫🇷 French - 🇺🇸 English (Basic)</p>
                 </div>
-                <div>
-                    <a href="https://github.com/dgmick" class="mx-2" target="_blank">
-                        Github
-                    </a>
-                    <a href="https://www.instagram.com/dgwaner/" class="mx-2" target="_blank">
-                        Instagram
-                    </a>
-                    <a href="https://www.linkedin.com/in/mickael-lutin-41357392/" class="mx-2" target="_blank">
-                        Linked
-                    </a>
-                </div>
             </div>
             <div>
                 <ul>
@@ -68,8 +57,9 @@
         <div id="skill-element" class="hidden">
             <h2 class="leading-10 text-4xl">ABOUT</h2>
             <div class="w-20 h-1 bg-color-brown mt-8 mb-10"></div>
-            <h2 class="leading-10 text-4xl">Professional Skills</h2>
-            <div class="w-20 h-1 bg-color-brown mt-3"></div>
+            {{ include('include/_subtible-block.html.twig', {
+                title: 'Professional Skills'
+            }) }}
             <br>
             <div class="grid grid-cols-3 gap-4">
                 <div class="py-2">
@@ -141,8 +131,9 @@
                     </ul>
                 </div>
             </div>
-            <h3 class="leading-10 text-4xl">Chart</h3>
-            <div class="w-20 h-1 bg-color-brown mt-3"></div>
+            {{ include('include/_subtible-block.html.twig', {
+                title: 'Chart'
+            }) }}
             {% set array = {
                 'Php': 70,
                 'Javascript': 50,
@@ -173,9 +164,6 @@
             <h2 class="leading-10 text-4xl">Education</h2>
             <div class="w-20 h-1 bg-color-brown mt-8 mb-10"></div>
         </div>
-        <div id="contact-element">
-            <h2 class="leading-10 text-4xl">CONTACT</h2>
-            <div class="w-20 h-1 bg-color-brown mt-8 mb-10"></div>
-        </div>
+        {{ include('home/contact.html.twig') }}
     </article>
 {% endblock %}

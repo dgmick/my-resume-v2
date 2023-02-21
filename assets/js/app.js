@@ -8,6 +8,17 @@ $(document).ready(function() {
         window.open(value, '_blank');
     });
 
+    const sendEmail = $('#send_email');
+
+    sendEmail.on('click', function () {
+        const myEmail = $('#myEmail').val();
+        const subject = $('#subject').val();
+        const comment = $('#comment').val();
+        const href = "mailto:" + myEmail + "?subject=" + subject + "&body=" + comment;
+
+        sendEmail.attr('href', href);
+    });
+
     $('#about, #skill, #resume, #contact').on('click', function (event) {
         const value = event.target.id;
         const about = $('#about-element');
