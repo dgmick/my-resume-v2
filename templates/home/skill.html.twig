@@ -1,0 +1,43 @@
+<div id="skill-element">
+    <h2 class="leading-10 text-4xl">SKILL</h2>
+    <div class="w-20 h-1 bg-color-brown mt-8 mb-10"></div>
+    {{ include('include/_subtible-block.html.twig', {
+        title: 'Professional Skills'
+    }) }}
+    <br>
+    <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
+        {% for title, skills in professionalSkills %}
+            <div class="py-2">
+                <h3>{{ title|capitalize }}</h3>
+                <div class="w-20 h-1 bg-color-brown mt-3"></div>
+                <ul class="flex flex-wrap items-center my-3">
+                    {% for professionalSkill in skills %}
+                        <li class="rounded-lg border border-color-brown p-1 m-1">
+                            <p>{{ professionalSkill.techno|capitalize }}
+                                {% if professionalSkill.framework %}
+                                    - {{ professionalSkill.framework|capitalize }}
+                                {% endif %}
+                            </p>
+                        </li>
+                    {% endfor %}
+                </ul>
+            </div>
+        {% endfor %}
+    </div>
+    {{ include('include/_subtible-block.html.twig', {
+        title: 'Chart'
+    }) }}
+    <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 py-2">
+        {% for chart in skillCharts %}
+            <div class="pb-2">
+                <div class="flex justify-between">
+                    <p>{{ chart.techno|capitalize }}</p>
+                    <p>{{ chart.value }}%</p>
+                </div>
+                <div class="w-full bg-color-light-brown rounded-full h-2.5">
+                    <div class="bg-color-brown h-2.5 rounded-full" style="width: {{ chart.value }}%"></div>
+                </div>
+            </div>
+        {% endfor %}
+    </div>
+</div>

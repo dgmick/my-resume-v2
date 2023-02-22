@@ -3,6 +3,8 @@
 namespace App\Controller;
 
 use App\Entity\Experiences;
+use App\Entity\ProfessionalSkill;
+use App\Entity\SkillChart;
 use Doctrine\Persistence\ManagerRegistry;
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
 use Symfony\Component\HttpFoundation\Response;
@@ -25,6 +27,17 @@ class HomePageController extends AbstractController
         return $this->render('home/resume.html.twig', [
             'experiences' => $experiences,
             'educations' => $educations,
+        ]);
+    }
+    #[Route('/skill', name: 'skill')]
+    public function skill(ManagerRegistry $doctrine): Response
+    {
+        $skillCharts = $doctrine->getRepository(SkillChart::class)->getList();
+        $professionalSkills = $doctrine->getRepository(ProfessionalSkill::class)->getProfessionalSkillsByGroup();
+
+        return $this->render('home/skill.html.twig', [
+            'skillCharts' => $skillCharts,
+            'professionalSkills' => $professionalSkills,
         ]);
     }
 }
