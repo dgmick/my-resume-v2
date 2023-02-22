@@ -1,0 +1,29 @@
+<div id="resume-element">
+    <h2 class="leading-10 text-4xl">Work Experience</h2>
+    <div class="w-20 h-1 bg-color-brown mt-8 mb-10"></div>
+    {% for experience in experiences %}
+        <div class="timeline-card timeline-card-info">
+            <div class="timeline-head px-6 pt-3">
+                <div class="h5">{{ experience.jobRole }}  ({{ experience.jobStatus }})<span class="text-muted h6">, {{ experience.company }}</span></div>
+            </div>
+            <div class="border-l border-color-light-brown px-6 pb-4 mt-3">
+                <div class="text-muted text-small mb-3 text-color-light-brown">{{ experience.startAt }} - {{ experience.periodEnd }}</div>
+                <div>{{ experience.resume }}</div>
+            </div>
+        </div>
+    {% endfor %}
+    <br>
+    <h2 class="leading-10 text-4xl">Education</h2>
+    <div class="w-20 h-1 bg-color-brown mt-8 mb-10"></div>
+    {% for education in educations %}
+        <div class="timeline-card timeline-card-info">
+            <div class="timeline-head px-6 pt-3">
+                <div class="h5">{{ education.jobRole }} ({{ education.jobStatus }})<span class="text-muted h6">, {{ education.company }}</span></div>
+            </div>
+            <div class="border-l border-color-light-brown px-6 pb-4 mt-3">
+                <div class="text-muted text-small mb-3">{{ education.startAt }} - {{ education.periodEnd }}</div>
+                <div>{{ education.resume }}</div>
+            </div>
+        </div>
+    {% endfor %}
+</div>
