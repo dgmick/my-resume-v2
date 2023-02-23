@@ -14,6 +14,11 @@ $(document).ready(function() {
         const myEmail = $('#myEmail').val();
         const subject = $('#subject').val();
         const comment = $('#comment').val();
+
+        if (subject === '' || comment === '') {
+            return false;
+        }
+
         const href = "mailto:" + myEmail + "?subject=" + subject + "&body=" + comment;
 
         sendEmail.attr('href', href);

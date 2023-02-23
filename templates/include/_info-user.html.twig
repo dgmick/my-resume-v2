@@ -1,13 +1,11 @@
-<li class="flex items-center text-medium pb-5">
-    <span class="mr-5">
-        <i class="fas fa-envelope"></i>
-    </span>
-    <div>
-        <p class="capitalize">{{ title }}</p>
-        {% if title == 'email' %}
-            <a class="text-color-light-gray" href="mailto:lutmickael@gmail.com">lutmickael@gmail.com</a>
-        {% else %}
-            <p class="text-color-light-gray">{{ value }}</p>
-        {% endif %}
+<li class="text-medium pb-5 hidden sm:block lg:block">
+    <div class="flex items-center justify-center">
+        <span class="mr-5">
+            <i class="fas {{ fontName }} fa-xl"></i>
+        </span>
+        <div>
+            <p class="capitalize">{{ title }}</p>
+            <a class="text-color-light-gray" {% if title == 'email' %} href="mailto:lutmickael@gmail.com" {% endif %}>{{ value }}</a>
+        </div>
     </div>
 </li>

@@ -3,6 +3,10 @@
 @tailwind utilities;
 @import '~font-awesome';
 
+@import "./font/scss/fontawesome.scss";
+@import "./font/scss/solid.scss";
+@import "./font/scss/brands.scss";
+
 /* Layout */
 @import './layout/header';
 @import './layout/resume';

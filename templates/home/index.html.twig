@@ -3,11 +3,11 @@
 {% block body %}
     {% set me = 'Lutin Mickael' %}
     {% set job = 'Web Developper' %}
-    <h1 class="text-center pb-5 text-4xl">{{ job }}</h1>
+    <h1 class="text-center pb-5 text-md sm:text-xl md:text-3xl lg:text-4xl">{{ job }}</h1>
     <section class="p-7 rounded-[25px] border border-color-light-brown shadow-lg">
-        <div class="grid grid-cols-3 gap-4">
+        <div class="grid grid-cols-1 lg:grid-cols-3 gap-4">
             <div class="text-center">
-                <div class="xs:w-full lg:w-2/4 flex-shrink-0 m-auto">
+                <div class="w-2/4 flex-shrink-0 m-auto">
                     <img src="{{ asset('build/images/profile-picture.jpeg') }}"
                          alt="{{ me }}"
                          title="{{ me }}"
@@ -19,14 +19,7 @@
                     <p>🇫🇷 French - 🇺🇸 English (Basic)</p>
                 </div>
             </div>
-            <div>
-                <ul>
-                    {{ include('include/_info-user.html.twig', {title: 'email', value: 'lutmickael@gmail.com'}) }}
-                    {{ include('include/_info-user.html.twig', {title: 'phone', value: '0101202020'}) }}
-                    {{ include('include/_info-user.html.twig', {title: 'localisation', value: 'Paris, France'}) }}
-                </ul>
-            </div>
-            <div class="flex flex-wrap justify-between content-center">
+            <div class="flex justify-evenly lg:flex-wrap lg:justify-between items-center content-center">
                 <label for="file-fr"></label>
                 <select id="file-fr" class="p-2 bg-color-light-brown rounded-lg">
                     <option value="">Telecharger cv</option>
@@ -39,13 +32,20 @@
                     <option value="{{ asset('build/files/cv_canadien_fr.pdf') }}">Resume</option>
                 </select>
             </div>
+            <div class="m-auto">
+                <ul class="grid grid-cols-3 gap-5 lg:grid-cols-none lg:gap-0">
+                    {{ include('include/_info-user.html.twig', {title: 'email', value: 'lutmickael@gmail.com', fontName: 'fa-envelope'}) }}
+                    {{ include('include/_info-user.html.twig', {title: 'phone', value: '0101202020', fontName: 'fa-phone'}) }}
+                    {{ include('include/_info-user.html.twig', {title: 'localisation', value: 'Paris, France', fontName: 'fa-location-dot'}) }}
+                </ul>
+            </div>
         </div>
         <hr class="border-color-brown w-2/4 m-auto my-5">
-        <div class="text-center m-auto">
-            <input type="button" class="mx-5 cursor-pointer" id="about" value="About">
-            <input type="button" class="mx-5 cursor-pointer" id="skill" value="Skill">
-            <input type="button" class="mx-5 cursor-pointer" id="resume" value="Resume">
-            <input type="button" class="mx-5 cursor-pointer" id="contact" value="Contact">
+        <div class="text-center grid grid-cols-4 gap-3">
+            <input type="button" class="cursor-pointer" id="about" value="About">
+            <input type="button" class="cursor-pointer" id="skill" value="Skill">
+            <input type="button" class="cursor-pointer" id="resume" value="Resume">
+            <input type="button" class="cursor-pointer" id="contact" value="Contact">
         </div>
     </section>
     <br>

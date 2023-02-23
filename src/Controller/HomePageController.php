@@ -21,8 +21,8 @@ class HomePageController extends AbstractController
     #[Route('/experience', name: 'experience')]
     public function experience(ManagerRegistry $doctrine): Response
     {
-        $experiences = $doctrine->getRepository(Experiences::class)->findBy(['isExperience' => true]);
-        $educations = $doctrine->getRepository(Experiences::class)->findBy(['isExperience' => false]);
+        $experiences = $doctrine->getRepository(Experiences::class)->findBy(['isExperience' => true], ['id' => 'DESC']);
+        $educations = $doctrine->getRepository(Experiences::class)->findBy(['isExperience' => false], ['id' => 'DESC']);
 
         return $this->render('home/resume.html.twig', [
             'experiences' => $experiences,
