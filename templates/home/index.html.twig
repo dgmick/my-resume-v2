@@ -3,15 +3,18 @@
 {% block body %}
     {% set me = 'Lutin Mickael' %}
     {% set job = 'Web Developper' %}
-    <h1 class="text-center pb-5 text-md sm:text-xl md:text-3xl lg:text-4xl">{{ job }}</h1>
-    <section class="p-7 rounded-[25px] border border-color-light-brown shadow-lg">
+    <h1 class="text-center pb-5">{{ job }}</h1>
+    <section class="p-7 rounded-[25px] border border-color-light-brown shadow-lg relative overflow-hidden">
+        <button id="show-infos" class="hidden xs:block sm:block absolute top-[-1px] right-[-1px] border rounded-bl-lg border-color-light-brown shadow-lg p-3 text-center bg-color-brown hover:bg-color-light-brown appearance-none focus:outline-none">
+            show infos
+        </button>
         <div class="grid grid-cols-1 lg:grid-cols-3 gap-4">
             <div class="text-center">
-                <div class="w-2/4 flex-shrink-0 m-auto">
+                <div class="w-2/4 m-auto">
                     <img src="{{ asset('build/images/profile-picture.jpeg') }}"
                          alt="{{ me }}"
                          title="{{ me }}"
-                         class="rounded-full object-cover border-2 border-color-light-brown"
+                         class="rounded-full object-cover border-2 border-color-light-brown m-auto"
                     >
                 </div>
                 <div class="p-2">
@@ -19,21 +22,21 @@
                     <p>🇫🇷 French - 🇺🇸 English (Basic)</p>
                 </div>
             </div>
-            <div class="flex justify-evenly lg:flex-wrap lg:justify-between items-center content-center">
+            <div class="m-auto flex justify-center items-center content-center xs:hidden sm:hidden xs:h-0 sm:h-0" id="pdf">
                 <label for="file-fr"></label>
-                <select id="file-fr" class="p-2 bg-color-light-brown rounded-lg">
+                <select id="file-fr" class="p-2 bg-color-light-brown rounded-lg mx-2 appearance-none focus:outline-none">
                     <option value="">Telecharger cv</option>
                     <option value="{{ asset('build/files/cv_francais_fr.pdf') }}">Version 🇫🇷</option>
                     <option value="{{ asset('build/files/cv_canadien_fr.pdf') }}">Version 🇨🇦</option>
                 </select>
                 <label for="file-en"></label>
-                <select id="file-en" class="p-2 bg-color-light-brown rounded-lg">
+                <select id="file-en" class="p-2 bg-color-light-brown rounded-lg mx-2 appearance-none focus:outline-none">
                     <option value="">Download Resume</option>
                     <option value="{{ asset('build/files/cv_canadien_fr.pdf') }}">Resume</option>
                 </select>
             </div>
-            <div class="m-auto">
-                <ul class="grid grid-cols-3 gap-5 lg:grid-cols-none lg:gap-0">
+            <div class="m-auto xs:hidden sm:hidden xs:h-0 sm:h-0" id="value">
+                <ul class="">
                     {{ include('include/_info-user.html.twig', {title: 'email', value: 'lutmickael@gmail.com', fontName: 'fa-envelope'}) }}
                     {{ include('include/_info-user.html.twig', {title: 'phone', value: '0101202020', fontName: 'fa-phone'}) }}
                     {{ include('include/_info-user.html.twig', {title: 'localisation', value: 'Paris, France', fontName: 'fa-location-dot'}) }}
@@ -41,17 +44,17 @@
             </div>
         </div>
         <hr class="border-color-brown w-2/4 m-auto my-5">
-        <div class="text-center grid grid-cols-4 gap-3">
-            <input type="button" class="cursor-pointer" id="about" value="About">
-            <input type="button" class="cursor-pointer" id="skill" value="Skill">
-            <input type="button" class="cursor-pointer" id="resume" value="Resume">
-            <input type="button" class="cursor-pointer" id="contact" value="Contact">
+        <div class="text-center xs:grid xs:grid-cols-4 xs:gap-3">
+            <input type="button" class="cursor-pointer md:mx-2 lg:mx-2" id="about" value="About">
+            <input type="button" class="cursor-pointer md:mx-2 lg:mx-2" id="skill" value="Skill">
+            <input type="button" class="cursor-pointer md:mx-2 lg:mx-2" id="resume" value="Resume">
+            <input type="button" class="cursor-pointer md:mx-2 lg:mx-2" id="contact" value="Contact">
         </div>
     </section>
     <br>
     <article class="p-7 rounded-[25px] border border-color-light-brown shadow-lg">
         <div id="about-element" class="hidden">
-            <h2 class="leading-10 text-4xl">ABOUT</h2>
+            <h2 class="leading-10">ABOUT</h2>
             <div class="w-20 h-1 bg-color-brown mt-8 mb-10"></div>
         </div>
         {{ render(controller('App\\Controller\\HomePageController::experience')) }}

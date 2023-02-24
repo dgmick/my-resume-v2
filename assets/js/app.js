@@ -24,6 +24,12 @@ $(document).ready(function() {
         sendEmail.attr('href', href);
     });
 
+    $('#show-infos').on('click', function () {
+        $('#pdf, #value').toggle().animate({
+            height: '100%',
+        }, 1500)
+    });
+
     $('#about, #skill, #resume, #contact').on('click', function (event) {
         const value = event.target.id;
         const about = $('#about-element');
