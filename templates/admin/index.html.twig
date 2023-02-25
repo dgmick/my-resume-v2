@@ -1,12 +1,24 @@
-{% extends 'base.html.twig' %}
+{% extends 'admin/layout.html.twig' %}
 
 {% block body %}
-    {% if app.user %}
-        <div class="mb-3 float-right">
-            <a href="{{ path('app_logout') }}" class="bg-color-brown hover:bg-color-light-brown text-white font-bold py-2 px-4 rounded text-color-black-brown">Logout</a>
-        </div>
-    {% endif %}
-
+    <nav>
+        <ul>
+            <li>
+                <a class="active" href="#about">About</a>
+            </li>
+            <li>
+                <a href="#skill">Skill</a>
+            </li>
+            <li>
+                <a href="#resume">Resume</a>
+            </li>
+            {% if app.user %}
+                <li class="float-right">
+                    <a href="{{ path('app_logout') }}" class="bg-color-brown hover:bg-color-light-brown text-white font-bold text-color-black-brown">Logout</a>
+                </li>
+            {% endif %}
+        </ul>
+    </nav>
 
     <div class="pt-10">
         {{ app.user.firstName }} {{ app.user.lastName }}
