@@ -20,6 +20,7 @@ module.exports = {
       'color-light-brown': '#c3a6a0',
       'color-brown': '#a15c38',
       'color-black-brown': '#262220',
+      'color-red': '#bd1818',
     },
     screens: {
       xs: { max: '575px' }, // Mobile (iPhone 3 - iPhone XS Max).

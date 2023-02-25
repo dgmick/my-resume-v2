@@ -1,0 +1,9 @@
+{% extends 'admin/layout.html.twig' %}
+
+{% block title %}Edit SkillChart{% endblock %}
+
+{% block body %}
+    <h1>Edit SkillChart</h1>
+    {{ include('skill_chart/_form.html.twig', {'button_label': 'Update'}) }}
+    {{ include('skill_chart/_delete_form.html.twig') }}
+{% endblock %}

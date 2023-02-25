@@ -1,0 +1,38 @@
+{% extends 'admin/layout.html.twig' %}
+
+{% block title %}SkillChart index{% endblock %}
+
+{% block body %}
+    <h1>SkillChart index</h1>
+
+    <div class="my-5">
+        <a href="{{ path('app_skill_chart_new') }}" class="p-3 bg-color-brown hover:bg-color-light-brown text-white font-bold text-color-black-brown">Create new</a>
+    </div>
+    <table class="table">
+        <thead>
+            <tr>
+                <th>Id</th>
+                <th>Techno</th>
+                <th>Value</th>
+                <th>actions</th>
+            </tr>
+        </thead>
+        <tbody>
+        {% for skill_chart in skill_charts %}
+            <tr>
+                <td>{{ skill_chart.id }}</td>
+                <td>{{ skill_chart.techno }}</td>
+                <td>{{ skill_chart.value }}</td>
+                <td>
+                    <a href="{{ path('app_skill_chart_show', {'id': skill_chart.id}) }}" class="p-2 bg-color-brown">show</a>
+                    <a href="{{ path('app_skill_chart_edit', {'id': skill_chart.id}) }}" class="p-2 bg-color-light-brown">edit</a>
+                </td>
+            </tr>
+        {% else %}
+            <tr>
+                <td colspan="4">no records found</td>
+            </tr>
+        {% endfor %}
+        </tbody>
+    </table>
+{% endblock %}

@@ -27,3 +27,33 @@ ul {
     background-color: $color-black-brown;
   }
 }
+
+.table {
+  width: 100%;
+
+  thead {
+    border-top: 2px solid $color-brown;
+    border-bottom: 2px solid $color-brown;
+    th {
+      text-transform: uppercase;
+      text-align: center;
+      padding: 10px;
+      color: $color-black-brown;
+      border: 1px solid #F1F1F1;
+    }
+  }
+  tbody {
+    tr {
+      border-bottom: 1px solid #F1F1F1;
+      color: $color-black-brown;
+      td {
+        padding: 10px;
+        border: 1px solid #F1F1F1;
+      }
+      th {
+        padding-left: 10px;
+        border: 1px solid #F1F1F1;
+      }
+    }
+  }
+}

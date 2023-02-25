@@ -14,7 +14,33 @@
 </head>
 <body>
 <div class="mx-auto py-14 px-4 sm:px-6 sm:max-w-3xl lg:px-8 lg:max-w-7xl">
-    {% block body %}{% endblock %}
+    <nav>
+        <ul>
+            <li>
+                <a class="active" href="{{ path('homepage') }}">HomePage</a>
+            </li>
+            <li>
+                <a class="active" href="{{ path('app_admin') }}">About</a>
+            </li>
+            <li>
+                <a href="{{ path('app_professional_skill_index') }}">Professional Skill</a>
+            </li>
+            <li>
+                <a href="{{ path('app_skill_chart_index') }}">Skill Chart</a>
+            </li>
+            <li>
+                <a href="{{ path('app_experiences_index') }}">Resume</a>
+            </li>
+            {% if app.user %}
+                <li class="float-right">
+                    <a href="{{ path('app_logout') }}" class="bg-color-brown hover:bg-color-light-brown text-white font-bold text-color-black-brown">Logout</a>
+                </li>
+            {% endif %}
+        </ul>
+    </nav>
+    <div class="mt-10">
+        {% block body %}{% endblock %}
+    </div>
 </div>
 </body>
 </html>

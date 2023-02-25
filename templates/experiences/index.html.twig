@@ -1,0 +1,49 @@
+{% extends 'admin/layout.html.twig' %}
+
+{% block title %}Experiences index{% endblock %}
+
+{% block body %}
+    <h1>Experiences index</h1>
+    <div class="my-5">
+        <a href="{{ path('app_experiences_new') }}" class="p-3 bg-color-brown hover:bg-color-light-brown text-white font-bold text-color-black-brown">Create new</a>
+    </div>
+    <table class="table">
+        <thead>
+            <tr>
+                <th>Id</th>
+                <th>JobRole</th>
+                <th>Company</th>
+                <th>StartAt</th>
+                <th>PeriodEnd</th>
+                <th>Resume</th>
+                <th>IsExperience</th>
+                <th>JobStatus</th>
+                <th>Localisation</th>
+                <th>actions</th>
+            </tr>
+        </thead>
+        <tbody>
+        {% for experience in experiences %}
+            <tr>
+                <td>{{ experience.id }}</td>
+                <td>{{ experience.jobRole }}</td>
+                <td>{{ experience.company }}</td>
+                <td>{{ experience.startAt }}</td>
+                <td>{{ experience.periodEnd }}</td>
+                <td>{{ experience.resume }}</td>
+                <td>{{ experience.isExperience ? 'Yes' : 'No' }}</td>
+                <td>{{ experience.jobStatus }}</td>
+                <td>{{ experience.localisation }}</td>
+                <td>
+                    <a href="{{ path('app_experiences_show', {'id': experience.id}) }}" class="p-2 bg-color-brown">show</a><br>
+                    <a href="{{ path('app_experiences_edit', {'id': experience.id}) }}" class="p-2 bg-color-light-brown">edit</a>
+                </td>
+            </tr>
+        {% else %}
+            <tr>
+                <td colspan="10">no records found</td>
+            </tr>
+        {% endfor %}
+        </tbody>
+    </table>
+{% endblock %}

@@ -1,0 +1,7 @@
+{{ form_start(form) }}
+    {{ form_row(form.techno, {'attr': {'class': 'border-b border-color-brown rounded shadow appearance-none w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none my-3'}}) }}
+    {{ form_row(form.framework, {'attr': {'class': 'border-b border-color-brown rounded shadow appearance-none w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none my-3'}}) }}
+    {{ form_row(form.universe, {'attr': {'class': 'border-b border-color-brown rounded shadow appearance-none w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none my-3'}}) }}
+    <a href="{{ path('app_professional_skill_index') }}" class="p-2 bg-color-brown">back to list</a>
+    <button class="p-2 bg-color-light-brown">{{ button_label|default('Save') }}</button>
+{{ form_end(form) }}

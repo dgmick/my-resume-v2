@@ -1,0 +1,38 @@
+{% extends 'admin/layout.html.twig' %}
+
+{% block body %}
+    <h1>ProfessionalSkill index</h1>
+
+    <div class="my-5">
+        <a href="{{ path('app_professional_skill_new') }}" class="p-3 bg-color-brown hover:bg-color-light-brown text-white font-bold text-color-black-brown">Create new</a>
+    </div>
+    <table class="table">
+        <thead>
+        <tr>
+            <th>Id</th>
+            <th>Techno</th>
+            <th>Framework</th>
+            <th>Universe</th>
+            <th>actions</th>
+        </tr>
+        </thead>
+        <tbody>
+        {% for professional_skill in professional_skills %}
+            <tr>
+                <td>{{ professional_skill.id }}</td>
+                <td>{{ professional_skill.techno }}</td>
+                <td>{{ professional_skill.framework }}</td>
+                <td>{{ professional_skill.universe }}</td>
+                <td>
+                    <a href="{{ path('app_professional_skill_show', {'id': professional_skill.id}) }}" class="p-2 bg-color-brown">show</a>
+                    <a href="{{ path('app_professional_skill_edit', {'id': professional_skill.id}) }}" class="p-2 bg-color-light-brown">edit</a>
+                </td>
+            </tr>
+        {% else %}
+            <tr>
+                <td colspan="5">no records found</td>
+            </tr>
+        {% endfor %}
+        </tbody>
+    </table>
+{% endblock %}

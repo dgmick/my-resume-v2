@@ -1,0 +1,13 @@
+{{ form_start(form) }}
+    {{ form_row(form.jobRole, {'attr': {'class': 'border-b border-color-brown rounded shadow appearance-none w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none my-3'}}) }}
+    {{ form_row(form.jobStatus, {'attr': {'class': 'border-b border-color-brown rounded shadow appearance-none w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none my-3'}}) }}
+    {{ form_row(form.company, {'attr': {'class': 'border-b border-color-brown rounded shadow appearance-none w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none my-3'}}) }}
+    {{ form_row(form.startAt, {'attr': {'class': 'border-b border-color-brown rounded shadow appearance-none w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none my-3'}}) }}
+    {{ form_row(form.periodEnd, {'attr': {'class': 'border-b border-color-brown rounded shadow appearance-none w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none my-3'}}) }}
+    {{ form_row(form.localisation, {'attr': {'class': 'border-b border-color-brown rounded shadow appearance-none w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none my-3'}}) }}
+    {{ form_row(form.resume, {'attr': {'class': 'border-b border-color-brown rounded shadow appearance-none w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none my-3'}}) }}
+    {{ form_row(form.isExperience) }}
+<br>
+<a href="{{ path('app_experiences_index') }}" class="p-2 bg-color-brown">back to list</a>
+<button class="p-2 bg-color-light-brown">{{ button_label|default('Save') }}</button>
+{{ form_end(form) }}

@@ -1,0 +1,33 @@
+{% extends 'admin/layout.html.twig' %}
+
+{% block title %}ProfessionalSkill{% endblock %}
+
+{% block body %}
+    <h1>ProfessionalSkill</h1>
+
+    <table class="table">
+        <tbody>
+            <tr>
+                <th>Id</th>
+                <td>{{ professional_skill.id }}</td>
+            </tr>
+            <tr>
+                <th>Techno</th>
+                <td>{{ professional_skill.techno }}</td>
+            </tr>
+            <tr>
+                <th>Framework</th>
+                <td>{{ professional_skill.framework }}</td>
+            </tr>
+            <tr>
+                <th>Universe</th>
+                <td>{{ professional_skill.universe }}</td>
+            </tr>
+        </tbody>
+    </table>
+    <div class="my-5">
+        <a href="{{ path('app_professional_skill_index') }}" class="p-2 bg-color-brown">back to list</a>
+        <a href="{{ path('app_professional_skill_edit', {'id': professional_skill.id}) }}" class="p-2 bg-color-light-brown">edit</a>
+        {{ include('professional_skill/_delete_form.html.twig') }}
+    </div>
+{% endblock %}
