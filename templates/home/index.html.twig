@@ -4,7 +4,7 @@
     <h1 class="text-center pb-5">{{ admin.job }}</h1>
     <section class="p-7 rounded-[25px] border border-color-light-brown shadow-lg relative overflow-hidden">
         <button id="show-infos" class="hidden xs:block sm:block absolute top-[-1px] right-[-1px] border rounded-bl-lg border-color-light-brown shadow-lg p-3 text-center bg-color-brown hover:bg-color-light-brown appearance-none focus:outline-none">
-            Show infos
+            Show info
         </button>
         <div class="grid grid-cols-1 lg:grid-cols-3 gap-4">
             <div class="text-center">
@@ -51,12 +51,9 @@
     </section>
     <br>
     <article class="p-7 rounded-[25px] border border-color-light-brown shadow-lg">
-        <div id="about-element" class="hidden">
-            <h2 class="leading-10">ABOUT</h2>
-            <div class="w-20 h-1 bg-color-brown mt-8 mb-10"></div>
-        </div>
-        {{ render(controller('App\\Controller\\HomePageController::experience')) }}
-        {{ render(controller('App\\Controller\\HomePageController::skill')) }}
+        {{ include('home/about.html.twig') }}
+        {{ include('home/skill.html.twig') }}
+        {{ include('home/resume.html.twig') }}
         {{ include('home/contact.html.twig') }}
     </article>
 {% endblock %}

@@ -18,6 +18,7 @@ class UserType extends AbstractType
             ->add('phoneNumber')
             ->add('language')
             ->add('aboutMe')
+            ->add('hobies')
         ;
     }
 

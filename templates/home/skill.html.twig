@@ -1,9 +1,8 @@
-<div id="skill-element">
+<div id="skill-element" class="hidden">
     <h2 class="leading-10">SKILL</h2>
     <div class="w-20 h-1 bg-color-brown mt-8 mb-10"></div>
-    {{ include('include/_subtible-block.html.twig', {
-        title: 'Professional Skills'
-    }) }}
+    <p class="leading-10 text-center text-lg">Professional Skills</p>
+    <div class="w-20 h-1 bg-color-brown mt-3 m-auto"></div>
     <br>
     <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
         {% for title, skills in professionalSkills %}
@@ -24,9 +23,6 @@
             </div>
         {% endfor %}
     </div>
-    {{ include('include/_subtible-block.html.twig', {
-        title: 'Chart'
-    }) }}
     <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 py-2">
         {% for chart in skillCharts %}
             <div class="pb-2">

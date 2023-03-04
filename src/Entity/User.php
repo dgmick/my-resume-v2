@@ -49,6 +49,9 @@ class User implements UserInterface, PasswordAuthenticatedUserInterface
     #[ORM\Column(type: Types::TEXT)]
     private ?string $aboutMe = null;
 
+    #[ORM\Column(length: 255, nullable: true)]
+    private ?string $hobies = null;
+
     public function getId(): ?int
     {
         return $this->id;
@@ -223,6 +226,18 @@ class User implements UserInterface, PasswordAuthenticatedUserInterface
     public function setAboutMe(string $aboutMe): self
     {
         $this->aboutMe = $aboutMe;
+
+        return $this;
+    }
+
+    public function getHobies(): ?string
+    {
+        return $this->hobies;
+    }
+
+    public function setHobies(?string $hobies): self
+    {
+        $this->hobies = $hobies;
 
         return $this;
     }

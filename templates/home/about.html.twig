@@ -1,0 +1,12 @@
+<div id="about-element">
+    <h2 class="leading-10">ABOUT</h2>
+    <div class="w-20 h-1 bg-color-brown mt-8 mb-10"></div>
+    <div class="grid xs:grid-cols-1 grid-cols-2 gap-3">
+        <p class="xs:border-none border-r-2 border-color-brown">{{ admin.aboutMe|raw }}</p>
+        <div class="xs:border-t-2 xs:border-color-brown xs:pt-3">
+            <h3>Extra professional activities:</h3>
+            <div class="w-20 h-1 bg-color-brown mt-3 mb-3 mx-auto"></div>
+            <p>{{ admin.hobies|raw }}</p>
+        </div>
+    </div>
+</div>
