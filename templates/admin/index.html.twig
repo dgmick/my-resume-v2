@@ -1,10 +1,22 @@
 {% extends 'admin/layout.html.twig' %}
 
 {% block body %}
-<div>
-    <p>Hello {{ admin.fullName }}</p>
-    <div class="pt-3">
-        <a href="{{ path('app_admin_edit') }}" class="p-2 bg-color-brown">Click here to edit infos.</a>
+    <div>
+        {% for message in app.flashes('success') %}
+            <div class="p-2 bg-color-light-brown">
+                {{ message }}
+            </div>
+        {% endfor %}
+        <p>Hello {{ admin.fullName }}</p>
+        <div class="pt-3">
+            <a href="{{ path('app_admin_edit') }}" class="p-2 bg-color-brown">Click here to edit infos.</a>
+        </div>
+        <div class="mt-10">
+            {{ form_start(formPdf) }}
+            {{ form_row(formPdf.pdfFile) }}
+            <br>
+            <button type="submit" class="p-2 mt-2 bg-color-light-brown">Importer</button>
+            {{ form_end(formPdf) }}
+        </div>
     </div>
-</div>
 {% endblock %}
