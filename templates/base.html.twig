@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" class="scroll-smooth">
     <head>
         <meta charset="UTF-8">
         <title>{% block title %}Lutin Mickael - Web developper{% endblock %}</title>
@@ -12,14 +12,12 @@
             {{ encore_entry_script_tags('app') }}
         {% endblock %}
     </head>
-    <body>
-        <div class="mx-auto py-14 px-4 sm:px-6 sm:max-w-3xl lg:px-8 lg:max-w-7xl">
-            {% block body %}{% endblock %}
-            <footer>
-                {% block footer %}
-                    {{ include('footer.html.twig') }}
-                {% endblock %}
-            </footer>
-        </div>
+    <body class="bg-color-light-white text-color-black-brown">
+    {% block body %}{% endblock %}
+    <footer>
+        {% block footer %}
+            {{ include('footer.html.twig') }}
+        {% endblock %}
+    </footer>
     </body>
 </html>
