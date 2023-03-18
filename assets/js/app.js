@@ -25,7 +25,7 @@ $(document).ready(function() {
     });
 
     $('#show-infos').on('click', function () {
-        $('#pdf, #value').toggle().animate({
+        $('#pdf, #value').css('display', 'flex').animate({
             height: '100%',
         }, 1500)
     });

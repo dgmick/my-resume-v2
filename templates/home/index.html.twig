@@ -21,7 +21,7 @@
                         <p>{{ admin.language }}</p>
                     </div>
                 </div>
-                <div class="m-auto flex justify-center items-center content-center hidden lg:block xs:h-0 sm:h-0" id="pdf">
+                <div class="flex justify-center items-center content-center hidden md:m-auto lg:block h-0 sm:h-0" id="pdf">
                     <label for="file-fr"></label>
                     <select id="file-fr" class="p-1 bg-color-light-brown rounded-lg mx-2 appearance-none focus:outline-none">
                         <option value="">Telecharger cv</option>
@@ -34,13 +34,13 @@
                         <option value="{{ asset('build/files/cv_canadien_fr.pdf') }}">Resume</option>
                     </select>
                 </div>
-                <div class="m-auto hidden md:block xs:h-0 md:h-full" id="value">
+                <div class="m-auto hidden md:block h-0 md:h-full" id="value">
                     <ul class="">
                         {{ include('include/_info-user.html.twig', {title: 'email', value: admin.email, fontName: 'fa-envelope'}) }}
                         {{ include('include/_info-user.html.twig', {title: 'phone', value: admin.phoneNumber, fontName: 'fa-phone'}) }}
                         {{ include('include/_info-user.html.twig', {title: 'localisation', value: admin.localisation, fontName: 'fa-location-dot'}) }}
                     </ul>
-                    <div class="hidden md:block lg:hidden" id="pdf">
+                    <div class="hidden md:block lg:hidden">
                         <label for="file-fr"></label>
                         <select id="file-fr" class="p-1 bg-color-light-brown rounded-lg mx-2 appearance-none focus:outline-none">
                             <option value="">Telecharger cv</option>
