@@ -1,3 +1,9 @@
+{% set isMobile = 'iPhone' in app.request.headers.get('User-Agent')
+    or 'iPod' in app.request.headers.get('User-Agent')
+    or 'iPad' in app.request.headers.get('User-Agent')
+    or 'Android' in app.request.headers.get('User-Agent')
+    or 'BlackBerry' in app.request.headers.get('User-Agent')
+%}
 <li class="xs:text-sm text-medium pb-5">
     <div class="flex items-center">
         <span class="mr-5">
@@ -5,7 +11,13 @@
         </span>
         <div>
             <p class="capitalize">{{ title }}</p>
-            <a class="text-color-light-gray" {% if title == 'email' %} href="mailto:lutmickael@gmail.com" {% endif %}>{{ value }}</a>
+            <a class="text-color-light-gray"
+                    {% if title == 'email' %}
+                href="mailto:lutmickael@gmail.com"
+                    {% elseif title == 'phone' and isMobile %}
+                href="tel:{{ value|trim }}"
+                    {% endif %}>{{ value }}
+            </a>
         </div>
     </div>
 </li>
